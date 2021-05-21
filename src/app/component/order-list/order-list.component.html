@@ -1,0 +1,50 @@
+<div class="container">
+    <br><br><br>
+    <h1>order Details</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>orderNo</th>
+            <th>amount</th>
+            <th>user Id</th>
+            <th>fullname</th>
+            <th>email</th>
+            <th>phno</th>
+            <th>address</th>
+            <th>payment id</th>
+            <th>mode</th>
+            <th>ccNumber</th>
+            <th>cvv</th>
+            <th>totalAmount</th>
+            <th>Actions</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td>{{order.orderNo}}</td>
+            <td>{{order.amount}}</td>
+            <td>{{order.userDto.id}}</td>
+            <td>{{order.userDto.fullname}}</td>
+            <td>{{order.userDto.email}}</td>
+            <td>{{order.userDto.phno}}</td>
+            <td>{{order.userDto.address}}</td>
+            <td>{{order.paymentDto.id}}</td>
+            <td>{{order.paymentDto.mode}}</td>
+            <td>{{order.paymentDto.ccNumber}}</td>
+            <td>{{order.paymentDto.cvv}}</td>
+            <td>{{order.paymentDto.totalAmount}}</td>
+        
+            <td>
+                <button class = "btn btn-outline-success"> Update</button>
+            </td>
+            <td>
+                <button  class = "btn btn-outline-warning" style="margin-left: 10px"> Delete</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+</div>

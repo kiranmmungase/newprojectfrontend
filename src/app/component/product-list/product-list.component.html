@@ -1,0 +1,49 @@
+<div class="container">
+    <br><br><br>
+    <h1>Product Details</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>description</th>
+            <th>Price</th>
+            <th>Category Name</th>
+            <th>Category Description</th>
+            <th>Add Product Date</th>
+            <th>Image</th>
+            <th>Actions</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.pname}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.category.name}}</td>
+            <td>{{product.category.subDescription}}</td>
+            <td>{{product.productDate}}</td>
+            <td>
+                <!-- src\assets\Screenshot (497).png
+                D:\FSD-Ness\Angular-Spring-Assignment\Grocery-App-Frontend\src\assets\Screenshot (497).png -->
+                <!-- <img src="{{getImagePath(product.image)}}" width="100" height="60"> -->
+                <img src="../../../assets/images/{{getImagePath(product.image)}}" width="100" height="60">
+            </td>
+            <!-- <td>{{product.image}}</td> -->
+        
+            <td>
+                <button (click)="updateProduct(product.id)" class = "btn btn-outline-success"> Update</button>
+            </td>
+            <td>
+                <button (click)="deleteProduct(product.id)" class = "btn btn-outline-warning" style="margin-left: 10px"> Delete</button>
+            </td>
+            <td> 
+                <button  class = "btn btn-outline-info" style="margin-left: 10px"> View</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+</div>

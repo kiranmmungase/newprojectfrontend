@@ -1,0 +1,84 @@
+<div class="container">
+
+    <div class="col-md-6 offset-md-3">
+        <h3> Add Order </h3>
+        <form #userForm="ngForm" enctype="multipart/form-data">
+
+
+            <div class="form-group">
+                <label for="">Order NO</label>
+                <input type="text" #orderNo="ngModel" [(ngModel)]="order.orderNo" name="orderNo"
+                    [class.is-invalid]="orderNo.invalid && orderNo.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="orderNo.untouched || orderNo.valid">Th1is is required
+                    field</small>
+            </div>
+
+            <div class="form-group">
+                <label for="">Order Amount</label>
+                <input type="text" #amount="ngModel" [(ngModel)]="order.amount" name="amount"
+                    [class.is-invalid]="amount.invalid && amount.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="amount.untouched || amount.valid">This is required
+                    field</small>
+            </div>
+
+
+            <div class="form-group">
+                <label for="">User Id</label>
+                <input type="text" #id="ngModel" [(ngModel)]="order.userDto.id" name="id"
+                    [class.is-invalid]="id.invalid && id.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="id.untouched || id.valid">This is required field</small>
+            </div>
+
+            <div class="form-group">
+                <label for="">Full Name</label>
+                <input type="text" #fullname="ngModel" [(ngModel)]="order.userDto.fullname" name="fullname"
+                    [class.is-invalid]="fullname.invalid && fullname.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="fullname.untouched || fullname.valid">This is required
+                    field</small>
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Email Id</label>
+                <input type="text" #email="ngModel" [(ngModel)]="order.userDto.email" name="email"
+                    [class.is-invalid]="email.invalid && email.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="email.untouched || email.valid">This is required
+                    field</small>
+            </div>
+
+            <div class="form-group">
+                <label for="">Phone Number</label>
+                <input type="text" #phno="ngModel" [(ngModel)]="order.userDto.phno" name="phno"
+                    [class.is-invalid]="phno.invalid && phno.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="phno.untouched || phno.valid">This is required
+                    field</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="">Address</label>
+                <input type="text" #address="ngModel" [(ngModel)]="order.userDto.address" name="address"
+                    [class.is-invalid]="address.invalid && address.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="address.untouched || address.valid">This is required
+                    field</small>
+            </div>
+              <div class="form-group">
+                <label for="">Payment Id</label>
+                <input type="text" #id="ngModel" [(ngModel)]="order.paymentDto.id" name="id"
+                    [class.is-invalid]="id.invalid && id.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="id.untouched || id.valid">This is required
+                    field</small>
+            </div>
+            <div class="form-group">
+                <label for="">Payment Mode</label>
+                <input type="text" #mode="ngModel" [(ngModel)]="order.paymentDto.mode" name="mode"
+                    [class.is-invalid]="mode.invalid && mode.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="mode.untouched || mode.valid">This is required
+                    field</small>
+            </div>
+
+
+
+            <button class="btn btn-success" (click)="onSubmit()" type="submit">Submit</button>
+
+        </form>
+    </div>

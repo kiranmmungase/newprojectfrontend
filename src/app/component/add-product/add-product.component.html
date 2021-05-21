@@ -1,0 +1,68 @@
+<div class="container">
+
+  <div class="col-md-6 offset-md-3">
+    <h3> Add Product </h3>
+    <form #userForm="ngForm" enctype="multipart/form-data">
+
+
+      <div class="form-group">
+        <label for="">Product Name</label>
+        <input type="text" #pname="ngModel" [(ngModel)]="product.pname" name="pname"
+          [class.is-invalid]="pname.invalid && pname.touched" class="form-control" required />
+        <small class="text-danger" [class.d-none]="pname.untouched || pname.valid">Th1is is required field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="">Product Description</label>
+        <input type="text" #description="ngModel" [(ngModel)]="product.description" name="description"
+          [class.is-invalid]="description.invalid && description.touched" class="form-control" required />
+        <small class="text-danger" [class.d-none]="description.untouched || description.valid">This is required
+          field</small>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="">Product price</label>
+        <input type="text" #price="ngModel" [(ngModel)]="product.price" name="price"
+          [class.is-invalid]="price.invalid && price.touched" class="form-control" required />
+        <small class="text-danger" [class.d-none]="price.untouched || price.valid">This is required field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="">Product Category</label><br>
+
+        <label for="">Category name</label>
+        <input type="text" #name="ngModel" [(ngModel)]="category.name" name="name"
+          [class.is-invalid]="name.invalid && name.touched" class="form-control" required />
+        <small class="text-danger" [class.d-none]="name.untouched || name.valid">This is required field</small>
+
+        <label for="">Category Description</label>
+        <input type="text" #subDescription="ngModel" [(ngModel)]="category.subDescription" name="subDescription"
+          [class.is-invalid]="subDescription.invalid && subDescription.touched" class="form-control" required />
+        <small class="text-danger" [class.d-none]="subDescription.untouched || subDescription.valid">This is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="">Product Creating Date</label>
+        <input type="date" (change)="dateChange($event)" #productDate="ngModel" 
+        [ngModel]="product.productDate | date:'yyyy-MM-dd'" name="productDate" id="productDate"
+          [class.is-invalid]="productDate.invalid && productDate.touched" class="form-control" required />
+        <small class="text-danger" [class.d-none]="productDate.untouched || productDate.valid">This is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="">Product Image Upload</label>
+        <input type="file" (change)="selectFile($event)" name="image" id="productFile"
+        class="form-control" required />
+        <small class="text-danger">This is required
+          field</small>
+      </div>
+
+
+
+      <button class="btn btn-success" (click)="onSubmit()" type="submit">Submit</button>
+
+    </form>
+  </div>
